@@ -1,4 +1,6 @@
-node{
+pipeline{
+  agent any
+  stages{
 stage("build clean"){
 echo "Build clean"
   sh "mvn clean"
@@ -10,5 +12,6 @@ echo "Build packaging"
   stage("Build install"){
     echo "build install"
     sh "mvn install"
+  }
   }
 }
